@@ -1,5 +1,6 @@
 abstract class EulerSolution extends App {
+  def solve: Any
+
   util.Properties.setProp("scala.time", "true")
-  def solve : Any
   Console.println("Answer: " + solve)
 }

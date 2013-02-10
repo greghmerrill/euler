@@ -1,6 +1,5 @@
 object Euler0001 extends EulerSolution {
-  def solve: Int = {
-    def summation(n: Int): Int = { ((n * n) + n) / 2 }
-    (3 * summation(999 / 3)) + (5 * summation(999 / 5)) - (15 * summation(999 / 15)) 
-  }
+  def summation(n: Int) = ((n * n) + n) / 2
+  def sumOfMultiples(n: Int) = n * summation(999/n)
+  def solve = sumOfMultiples(3) + sumOfMultiples(5) - sumOfMultiples(15) 
 }
