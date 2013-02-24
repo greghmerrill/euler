@@ -5,7 +5,7 @@ abstract class EulerSolution extends App {
   util.Properties.setProp("scala.time", "true")
   val solution = solve
   Console.println("Answer: " + solution)
-  
+
   if (expect != "Unkown" && expect != solution) {
     Console.println("Answer " + expect + " from Project Euler not matched!");
   }
