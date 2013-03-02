@@ -1,5 +1,7 @@
 object EulerSolution0009 extends EulerSolution {
 
+  override def expect = 31875000
+  
   def solve: Int = {
     for (a <- 1 to 332) {
       for (b <- (a + 1) to ((1000 - a) / 2) - 1) {
