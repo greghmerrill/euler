@@ -1,4 +1,5 @@
 abstract class EulerSolution extends App {
+  
   def solve: Any
   def expect: Any = "Unkown" // subclass should override with actual answer from Project Euler
 
@@ -9,4 +10,5 @@ abstract class EulerSolution extends App {
   if (expect != "Unkown" && expect != solution) {
     Console.println("Answer " + expect + " from Project Euler not matched!");
   }
+
 }
