@@ -5,33 +5,35 @@ object Euler0011 extends EulerSolution {
   override def expect = 70600674
 
   def solve = {
-    val len = 20
-    val rows = (gridStr.lines.map { line => line.split(" ").toList.map { _.toInt } }).toList
+    val rows = (gridStr.lines.map { line =>
+      line.split(" ").toList.map { _.toInt }
+    }).toList
+    val len = rows.length
 
     val horiz = rows map { row =>
-      0 to len - 4 map {
-        col => row.slice(col, col + 4).product
+      0 to len - 4 map { col =>
+        row.slice(col, col + 4).product
       }
     }
 
     val vertical = 0 to len - 1 map { col =>
-      0 to len - 4 map {
-        row => rows.slice(row, row + 4).foldLeft(1) { (product, next) => product * next(col) }
+      0 to len - 4 map { row =>
+        rows.slice(row, row + 4).foldLeft(1) { (product, next) => product * next(col) }
       }
     }
 
     val descDiag = 0 to len - 4 map { row =>
       0 to len - 4 map { col =>
-        rows.slice(row, row + 4).foldLeft((col, 1)) {
-          (offsetAndProduct, nextRow) => (offsetAndProduct._1 + 1, offsetAndProduct._2 * nextRow(offsetAndProduct._1))
+        rows.slice(row, row + 4).foldLeft((col, 1)) { (offsetAndProduct, nextRow) =>
+          (offsetAndProduct._1 + 1, offsetAndProduct._2 * nextRow(offsetAndProduct._1))
         }
       } map { (offsetAndProduct) => offsetAndProduct._2 }
     }
 
     val ascDiag = 3 to len - 1 map { row =>
       0 to len - 4 map { col =>
-        rows.slice(row - 3, row + 1).foldLeft((col + 3, 1)) {
-          (offsetAndProduct, nextRow) => (offsetAndProduct._1 - 1, offsetAndProduct._2 * nextRow(offsetAndProduct._1))
+        rows.slice(row - 3, row + 1).foldLeft((col + 3, 1)) { (offsetAndProduct, nextRow) =>
+          (offsetAndProduct._1 - 1, offsetAndProduct._2 * nextRow(offsetAndProduct._1))
         }
       } map { (offsetAndProduct) => offsetAndProduct._2 }
     }
