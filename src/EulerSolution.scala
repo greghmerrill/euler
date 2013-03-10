@@ -4,6 +4,7 @@ abstract class EulerSolution extends App {
   def expect: Any = "Unkown" // subclass should override with actual answer from Project Euler
 
   util.Properties.setProp("scala.time", "true")
+  Console.println("Solving ...")
   val solution = solve
   Console.println("Answer: " + solution)
 
