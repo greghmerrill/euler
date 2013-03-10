@@ -1,17 +1,15 @@
+import scala.math._
+
 object Euler0015 extends EulerSolution {
 
   override def expect = 137846528820L
-  
-  def solve = {
-    def nextRow(prevRow: List[Long]): List[Long] = {
-      1L :: (0 to prevRow.length - 2).map(n => prevRow(n) + prevRow(n + 1)).toList ::: List(1L)
-    }
-    
-    var row = List(1L)
-    while (row.length < 41) {
-      row = nextRow(row)
-    }
-    row(20)
+
+  def factorial(n: BigInt) = {
+  	def _factorial(n: BigInt, accum: BigInt): BigInt = if (n == 1) accum else _factorial(n - 1, accum * n)
+    _factorial(n, 1)
   }
+
+  // "n choose k" to find a cell in Pascal's Triangle
+  def solve = factorial(40) / (factorial(20) * factorial(40 - 20))
 
 }
