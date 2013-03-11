@@ -15,8 +15,8 @@ object Euler0019 extends EulerSolution {
     var sundays = 0
     for (year <- 1900 to 2000) {
       for (month <- 0 to 11) {
-      	if (day % 7 == 0 && year > 1900) sundays += 1
-      	day += daysInMonth(month, year)
+        if (day % 7 == 0 && year > 1900) sundays += 1
+        day += daysInMonth(month, year)
       }
     }
     sundays
