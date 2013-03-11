@@ -5,7 +5,7 @@ object Euler0015 extends EulerSolution {
   override def expect = 137846528820L
 
   def factorial(n: BigInt) = {
-  	def _factorial(n: BigInt, accum: BigInt): BigInt = if (n == 1) accum else _factorial(n - 1, accum * n)
+    def _factorial(n: BigInt, accum: BigInt): BigInt = if (n == 1) accum else _factorial(n - 1, accum * n)
     _factorial(n, 1)
   }
 
