@@ -5,7 +5,7 @@ object Euler0024 extends EulerSolution {
   def fact(n: Int): Int = if (n == 1) n else n * fact(n - 1)
 
   def solve = {
-    def findPerm(termPos: Int, remainingTerms: List[Int], remainder: Int, perm: List[Int]): List[Int] = {
+    def findPerm(termPos: Int, remainingTerms: List[Int], remainder: Int, perm: List[Int] = List()): List[Int] = {
       if (termPos == 0) remainingTerms.head :: perm
       else {
         val termFact = fact(termPos)
@@ -14,7 +14,7 @@ object Euler0024 extends EulerSolution {
         findPerm(termPos - 1, remainingTerms.filterNot(_ == term), remainder - (termFact * index), term :: perm)
       }
     }
-    findPerm(9, (0 to 9).toList, 999999, List()).reverse.mkString("").toLong
+    findPerm(9, (0 to 9).toList, 999999).reverse.mkString("").toLong
   }
 
 }
