@@ -12,10 +12,10 @@ object Euler0023 extends EulerSolution {
         if (predicate(mapped)) mapWhileIter(xs.tail, mapped :: result)
         else result
       }
-    } 
-    mapWhileIter(xs, List[Int]())
+    }
+    mapWhileIter(xs, List())
   }
-  
+
   def solve = {
     println("Calculating abundants")
     val abundants = (1 to 28123).filter(n => divisors(n).sum > n).toList
