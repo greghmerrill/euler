@@ -19,7 +19,7 @@ object Euler0035 extends EulerSolution {
     nonPrimes.set(1)
 
     val upto = sqrt(below).toInt + 1
-    def sieve(prime: Int, primes: List[Int]): List[Int] = {
+    def sieve(prime: Int, primes: List[Int] = List()): List[Int] = {
       if (prime > below) primes
       else if (prime > upto) sieve(nonPrimes.nextClearBit(prime + 1), prime :: primes)
       else {
@@ -27,7 +27,7 @@ object Euler0035 extends EulerSolution {
         sieve(nonPrimes.nextClearBit(prime + 1), prime :: primes)
       }
     }
-    sieve(nonPrimes.nextClearBit(2), List()).reverse
+    sieve(2).reverse
   }
 
   def solve = {
