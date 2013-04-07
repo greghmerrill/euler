@@ -1,3 +1,4 @@
+// TODO revisit this one, it's not very elegant
 object Euler0033 extends EulerSolution {
 
   override def expect = 100

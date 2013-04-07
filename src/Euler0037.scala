@@ -1,3 +1,5 @@
+// TODO this can be improved by "building truncatable primes outward" following
+// rules such as "must end in 3 or 7" rather than generate, truncate and test
 object Euler0037 extends EulerSolution {
 
   override def expect = 748317
