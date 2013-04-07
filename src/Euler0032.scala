@@ -1,12 +1,12 @@
-object Digits {
-  val list = (1 to 9).toList
-  val set = Set() ++ list
-}
-
 object Euler0032 extends EulerSolution {
 
   override def expect = 45228
 
+	object Digits {
+	  val list = (1 to 9).toList
+	  val set = Set() ++ list
+	}
+  
   /** @return all ordered, non-repeating combinations with "size" elements from the given vals */
   def combos(vals: List[Int], size: Int): List[List[Int]] = {
     def comboIter(combo: List[Int], remainingVals: List[Int]): List[List[Int]] = {
