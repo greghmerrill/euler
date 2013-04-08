@@ -1,3 +1,4 @@
+import euler.EulerSolution
 import scala.math.BigInt
 
 object Euler0013 extends EulerSolution {

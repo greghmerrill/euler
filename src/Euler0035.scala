@@ -1,5 +1,5 @@
-import java.util.BitSet
-import scala.math.sqrt
+import euler.EulerSolution
+import euler.Primes
 
 object Euler0035 extends EulerSolution {
 

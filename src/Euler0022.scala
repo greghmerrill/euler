@@ -1,3 +1,4 @@
+import euler.EulerSolution
 import scala.io.Source
 
 object Euler0022 extends EulerSolution {

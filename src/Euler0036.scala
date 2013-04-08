@@ -1,3 +1,5 @@
+import euler.EulerSolution
+
 object Euler0036 extends EulerSolution {
 
   def isPal(s: String) = s.equals(s.toString.reverse)

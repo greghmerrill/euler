@@ -1,3 +1,5 @@
+import euler.EulerSolution
+
 object Euler0007 extends EulerSolution {
 
   override def expect = 104743

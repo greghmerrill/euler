@@ -1,3 +1,5 @@
+import euler.EulerSolution
+
 // TODO revisit this one, it's not very elegant
 object Euler0033 extends EulerSolution {
 

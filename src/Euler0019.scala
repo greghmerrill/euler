@@ -1,3 +1,5 @@
+import euler.EulerSolution
+
 object Euler0019 extends EulerSolution {
 
   def solve = {

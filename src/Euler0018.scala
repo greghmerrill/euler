@@ -1,3 +1,4 @@
+import euler.EulerSolution
 import scala.math.max
 
 object Euler0018 extends EulerSolution {

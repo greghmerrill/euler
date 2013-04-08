@@ -1,3 +1,5 @@
+package euler
+
 abstract class EulerSolution extends App {
   
   def solve: Any

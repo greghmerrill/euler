@@ -1,3 +1,4 @@
+import euler.EulerSolution
 import scala.math.sqrt
 
 object Euler0027 extends EulerSolution {

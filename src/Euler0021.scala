@@ -1,3 +1,4 @@
+import euler.EulerSolution
 import scala.math._
 
 object Euler0021 extends EulerSolution {

@@ -1,3 +1,5 @@
+import euler.EulerSolution
+
 object Euler0038 extends EulerSolution {
 
   object Digits { val all = Set() ++ 1.to(9) }

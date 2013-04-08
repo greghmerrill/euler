@@ -1,3 +1,5 @@
+package euler
+
 import java.util.BitSet
 import scala.math.sqrt
 
