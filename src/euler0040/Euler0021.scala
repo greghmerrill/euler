@@ -1,3 +1,5 @@
+package euler0040
+
 import euler.EulerSolution
 import scala.math._
 
