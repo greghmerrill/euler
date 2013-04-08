@@ -1,4 +1,4 @@
-package euler
+package euler0000
 
 object Euler0000 extends EulerSolution {
 
