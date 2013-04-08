@@ -1,3 +1,5 @@
+package euler0020
+
 import euler.EulerSolution
 
 object Euler0016 extends EulerSolution {
