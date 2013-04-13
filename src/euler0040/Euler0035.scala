@@ -17,7 +17,7 @@ object Euler0035 extends EulerSolution {
 
   def solve = {
     val primes = Set() ++ Primes.sieve(1000000)
-    primes.filter { prime => isCircularPrime(prime.toString, primes) } size
+    primes.filter({ prime => isCircularPrime(prime.toString, primes) }).size
   }
 
 }

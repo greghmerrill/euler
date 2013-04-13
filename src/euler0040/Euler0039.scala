@@ -18,11 +18,11 @@ object Euler0039 extends EulerSolution {
         if (a * a + b * b == c * c && perim < maxPerimeter) Option(perim)
         else None
       }
-      triangles filter { !_.isEmpty } map { t => t.get } toList
+      triangles.filter({ !_.isEmpty }).map({ t => t.get }).toList
     }
 
-    val perims = 1.to(maxPerimeter / 3) map(rightTrianglePerimeters(_)) flatten;
-    perims groupBy(x => x) map(kv => kv._1 -> kv._2.size) maxBy(kv => kv._2) _1
+    val perims = 1.to(maxPerimeter / 3).flatMap(rightTrianglePerimeters(_))
+    perims.groupBy(x => x).map(kv => kv._1 -> kv._2.size).maxBy(kv => kv._2)._1
   }
 
 }

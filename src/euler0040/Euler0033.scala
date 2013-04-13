@@ -35,7 +35,7 @@ object Euler0033 extends EulerSolution {
 
   def solve = {
     val numerators = 11 to 99 filter (_ % 10 > 0)
-    val cancelled = numerators map { num => canceledFracs(num) } filter (_.size > 0) flatten;
+    val cancelled = (numerators map { num => canceledFracs(num) } filter(_.size > 0)).flatten
     val rawProduct = cancelled.foldLeft(new Fraction(1, 1)) { (product, next) =>
       new Fraction(product.num * next.num, product.denom * next.denom)
     }

@@ -11,7 +11,7 @@ abstract class EulerSolution extends App {
   Console.println("Answer: " + solution)
 
   if (expect != "Unkown" && expect != solution) {
-    Console.println("Answer " + expect + " from Project Euler not matched!");
+    Console.println("Answer " + expect + " from Project Euler not matched!")
   }
 
 }

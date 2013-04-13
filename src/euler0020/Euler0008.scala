@@ -6,11 +6,11 @@ import scala.math.max
 object Euler0008 extends EulerSolution {
 
   override def expect = 40824
-  
+
   def maxProduct(i: Int, curMax: Int): Int = {
     if (i == number.length - numDigits) return curMax
-    val digits = (i to i + numDigits - 1) map (j => number slice(j, j + 1) toInt)
-    maxProduct(i + 1, max(digits product, curMax))
+    val digits = (i to i + numDigits - 1) map (j => number.slice(j, j + 1).toInt)
+    maxProduct(i + 1, max(digits.product, curMax))
   }
 
   def solve = maxProduct(0, 0)

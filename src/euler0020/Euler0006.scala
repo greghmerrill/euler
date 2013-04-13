@@ -9,7 +9,7 @@ object Euler0006 extends EulerSolution {
   
   def solve = {
     val sumOfSquares = (1 to 100).foldLeft(0) { (sum, next) => sum + next * next }
-    val squareOfSums = pow((1 to 100) sum, 2)
+    val squareOfSums = pow((1 to 100).sum, 2)
     squareOfSums - sumOfSquares
   }
 

@@ -41,7 +41,7 @@ object Euler0011 extends EulerSolution {
       } map { (offsetAndProduct) => offsetAndProduct._2 }
     }
 
-    (horiz.flatten ++ vertical.flatten ++ descDiag.flatten ++ ascDiag.flatten) max
+    (horiz.flatten ++ vertical.flatten ++ descDiag.flatten ++ ascDiag.flatten).max
   }
 
   def gridStr = """

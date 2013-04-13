@@ -19,7 +19,7 @@ object Euler0038 extends EulerSolution {
 
   def solve = {
     def hasPanDigitalProducts(n: Int) = isPanDigital(concatProducts(n))
-    val max = 1.to(9999) filter (hasPanDigitalProducts) max;
+    val max = 1.to(9999).filter(hasPanDigitalProducts).max
     concatProducts(max).toInt
   }
 

@@ -19,7 +19,7 @@ object Euler0037 extends EulerSolution {
   def truncLeft(prime: String) = trunc(prime, p => p.slice(1, p.size))
   def truncRight(prime: String) = trunc(prime, p => p.slice(0, p.size - 1))
 
-  def solve = PrimeCache.list filter { p => p > 7 && truncLeft(p.toString) && truncRight(p.toString) } sum
+  def solve = PrimeCache.list.filter({ p => p > 7 && truncLeft(p.toString) && truncRight(p.toString) }).sum
 
 }
 
