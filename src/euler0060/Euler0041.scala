@@ -25,7 +25,9 @@ object Euler0041 extends EulerSolution {
     }
 
     def maxPrimePandigForAllDigSets: Long = {
-      for (digCount <- 9.to(1, -1)) {
+      // Sum of 9 digits = 45, divisible by 3 so non prime
+      // Sum of 8 digits = 36, divisible by 3 so non prime
+      for (digCount <- 7.to(1, -1)) {
         val matched = maxPrimePandigital(Nil, digCount.to(1, -1).toList)
         if (matched.isDefined) return matched.get
       }
