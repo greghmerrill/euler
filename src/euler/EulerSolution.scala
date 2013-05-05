@@ -10,8 +10,10 @@ abstract class EulerSolution extends App {
   val solution = solve
   Console.println("Answer: " + solution)
 
-  if (expect != "Unkown" && expect != solution) {
-    Console.println("Answer " + expect + " from Project Euler not matched!")
+  if (expect != "Unkown") {
+    if (expect != solution) Console.println("Answer " + expect + " from Project Euler not matched!")
+    else Console.println("[Verified]")
   }
+
 
 }

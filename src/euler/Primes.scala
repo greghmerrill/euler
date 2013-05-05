@@ -22,4 +22,17 @@ object Primes {
     sieveIter(2).reverse
   }
 
+  def isPrime(n: Long): Boolean = {
+    
+    val sqrtn = sqrt(n).toInt
+    
+    def primeCheck(factor: Int): Boolean = {
+      if (factor > sqrtn) true
+      else if (n % factor == 0) false
+      else primeCheck(factor + 1)
+    }
+    
+    primeCheck(2)
+  }
+  
 }
