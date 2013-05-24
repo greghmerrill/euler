@@ -23,7 +23,7 @@ object Euler0017 extends EulerSolution {
         words20to99.map(n => thisHundred + "and" + n)
     }
     
-    var words = words1to9 ::: words10to19 ::: words20to99 ::: words100to999 ::: List("onethousand")    
+    val words = words1to9 ::: words10to19 ::: words20to99 ::: words100to999 ::: List("onethousand")    
     words.foldLeft(0) { (sum, word) => sum + word.length }
   }
 
