@@ -3,15 +3,11 @@ package euler0060
 import euler.EulerSolution
 import scala.math.abs
 import scala.math.sqrt
+import euler.QuadraticEquation.quadr
 
 object Euler0044 extends EulerSolution {
 
   override def expect = 5482660
-  
-  def quadr(a: Int, b: Int, c: Int): (Double, Double) = {
-    val sqrt_bsq4ac = sqrt((b * b) - (4 * a * c))
-    (((-b + sqrt_bsq4ac) / (2 * a)), ((-b - sqrt_bsq4ac) / (2 * a))) 
-  }
   
   def pentagonal(n: Int) = n * (3 * n - 1) / 2
   def pentagonals(n: Int): Stream[Int] = pentagonal(n) #:: pentagonals(n + 1)
