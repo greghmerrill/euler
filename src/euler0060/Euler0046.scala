@@ -17,7 +17,7 @@ object Euler0046 extends EulerSolution {
     def falseGoldbach(n: Long): Long = {
       if (isPrime(n)) falseGoldbach(n + 2)
       else {
-        val possiblePrimes = primes.takeWhile(_ <= n - 2).reverse
+        val possiblePrimes = primes.takeWhile(_ <= n - 2)
         val twiceSqs = twiceSquares().takeWhile(_ <= n - 2)
         val matched = possiblePrimes.find { p => twiceSqs.find { tsq => p + tsq == n }.isDefined }
 
