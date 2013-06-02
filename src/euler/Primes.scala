@@ -34,5 +34,12 @@ object Primes {
     
     primeCheck(2)
   }
+
+  private def nextPrimes(n: Long): Stream[Long] = {
+    val nextCandidate = n + 2
+    if (isPrime(nextCandidate)) nextCandidate #:: nextPrimes(nextCandidate)
+    else nextPrimes(nextCandidate)
+  }
+  def primes: Stream[Long] = 2 #:: 3 #:: nextPrimes(3)
   
 }
