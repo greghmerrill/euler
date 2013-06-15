@@ -1,8 +1,7 @@
 package euler0060
 
-import scala.annotation.tailrec
-
 import euler.EulerSolution
+import scala.math.sqrt
 import euler.Primes.primes
 
 object Euler0047 extends EulerSolution {
@@ -21,7 +20,7 @@ object Euler0047 extends EulerSolution {
 	    factorLists.toSet.size == count
     }
   }
-    
+
   def primeFactors(n: Long, factors: Map[Long, Int] = Map[Long, Int]()): Map[Long, Int] = {
     val startWith = if (factors.isEmpty) 2 else factors.keys.max
     val candidates = primes.dropWhile(_ < startWith).takeWhile(_ <= n)
@@ -33,18 +32,24 @@ object Euler0047 extends EulerSolution {
 
   def solve = {
     val reqdConsec = 4
-    @tailrec
-    def find(n: Int): Int = {
-      if (n % 100 == 0) println(n)
-      val factors = primeFactors(n)
-      if (factors.size != reqdConsec) find(n + reqdConsec)
+    val upperBound = 1000000
+    val numFactors = new Array[Int](upperBound)
+
+    for (i <- primes takeWhile(_ < sqrt(upperBound)) map(_.toInt))
+      for (j <- i.to(upperBound - 1, i))
+      	numFactors(j) = numFactors(j) + 1
+
+    val targetFactorCounts = (1 to reqdConsec).map({i => reqdConsec})
+    val firstMatch = (0.to(upperBound - reqdConsec)).find{ i =>
+      val seq = i to (i + reqdConsec - 1)
+      val factorCounts = seq.map(numFactors(_))
+      if (factorCounts != targetFactorCounts) false
       else {
-	      val nFactors = factors :: ((1 to reqdConsec - 1) map { i => primeFactors(n - i) }).toList
-	      if (areDistinct(nFactors.toList, reqdConsec)) n - reqdConsec + 1 
-	      else find(n + 1)
+        val pFacs = seq map { n => primeFactors(n) }
+        areDistinct(pFacs.toList, reqdConsec)
       }
     }
-    find(reqdConsec + 1)
+    firstMatch.get
   }
 
 }
