@@ -5,7 +5,7 @@ import scala.math.sqrt
 
 object Primes {
 
-  def sieve(below: Int) = {
+  def sieve(below: Int): List[Int] = {
     val nonPrimes = new BitSet()
     nonPrimes.set(0)
     nonPrimes.set(1)
